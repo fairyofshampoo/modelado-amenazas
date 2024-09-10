@@ -454,6 +454,9 @@
               "hasOpenThreats": false
             },
             "id": "a348e2a6-44a3-4316-bb56-511e154bf98a",
+            "labels": [
+              "Límite\nWeb Server / Db"
+            ],
             "source": {
               "x": 600,
               "y": 270
@@ -467,9 +470,138 @@
                 "x": 530,
                 "y": 480
               }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Queries",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "2de8f65e-c99b-4fe9-bd34-8315341b755b",
+            "source": {
+              "cell": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e"
+            },
+            "target": {
+              "cell": "4854feb9-f2fb-41bb-9ece-1424f227a0e2"
+            },
+            "vertices": [
+              {
+                "x": 440,
+                "y": 500
+              }
             ],
             "labels": [
-              "Límite\nWeb Server / Db"
+              "Queries"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Páginas",
+              "description": "Páginas web leídas desde el disco.",
+              "outOfScope": true,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "840981ad-2ad0-4769-9f8a-46b10d528c1e",
+            "source": {
+              "cell": "225567cd-dcce-4886-bd84-a6602cc47c7e"
+            },
+            "target": {
+              "cell": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e"
+            },
+            "labels": [
+              "Páginas"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Lee web\napp config",
+              "description": "Archivo físico de configuración leído desde el disco.",
+              "outOfScope": true,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "26ae8f2e-b49a-4fbb-8d26-bbc3059a0786",
+            "source": {
+              "cell": "d2fdd654-ae48-4638-ac89-f264e7969e3a"
+            },
+            "target": {
+              "cell": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e"
+            },
+            "labels": [
+              "Lee web\napp config"
             ]
           },
           {
@@ -575,7 +707,7 @@
           {
             "position": {
               "x": 260,
-              "y": 520
+              "y": 550
             },
             "size": {
               "width": 120,
@@ -615,8 +747,8 @@
           },
           {
             "position": {
-              "x": 10,
-              "y": 490
+              "x": 49.99999999999994,
+              "y": 530
             },
             "size": {
               "width": 120,
@@ -642,7 +774,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Páginas web en disco",
-              "description": "",
+              "description": "Páginas físicas almacenadas en el disco.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -651,7 +783,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "bf869b67-889d-4571-ab7f-e3f80ecd1767",
+                  "title": "Modificación sin autorización",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Un atacante podría modificar las páginas web sin autorización.",
+                  "mitigation": "Las páginas solo tienen acceso de lectura. Únicamente el usuario administrador puede tener acceso de escritura",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           }
         ]
@@ -668,6 +820,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Lorena Rojas",
-    "threatTop": 7
+    "threatTop": 8
   }
 }
