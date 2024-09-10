@@ -45,8 +45,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "a3f19467-c95f-4797-8520-0936c368b33c",
             "zIndex": 1,
+            "id": "a3f19467-c95f-4797-8520-0936c368b33c",
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
@@ -97,8 +97,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "1fd2a050-8226-46d8-b71c-407adc346f84",
             "zIndex": 2,
+            "id": "1fd2a050-8226-46d8-b71c-407adc346f84",
             "data": {
               "type": "tm.Actor",
               "name": "Bibliotecario",
@@ -142,6 +142,9 @@
               "hasOpenThreats": false
             },
             "id": "4f993a03-d3ad-4e2b-8b42-a1e2de382c18",
+            "labels": [
+              "Usuario/Web\nserver límite"
+            ],
             "source": {
               "x": -40,
               "y": 110
@@ -159,9 +162,6 @@
                 "x": 400,
                 "y": 220
               }
-            ],
-            "labels": [
-              "Usuario/Web\nserver límite"
             ]
           },
           {
@@ -216,15 +216,15 @@
               }
             },
             "id": "4a029bb1-44bc-48d1-b271-0b92ca9c1f0b",
+            "labels": [
+              "Web Request"
+            ],
             "source": {
               "cell": "1fd2a050-8226-46d8-b71c-407adc346f84"
             },
             "target": {
               "cell": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e"
             },
-            "labels": [
-              "Web Request"
-            ],
             "vertices": [
               {
                 "x": 360,
@@ -284,6 +284,9 @@
               }
             },
             "id": "a2172049-88d7-4c9d-8ea9-30605af7f2b6",
+            "labels": [
+              "Web Request"
+            ],
             "source": {
               "cell": "a3f19467-c95f-4797-8520-0936c368b33c"
             },
@@ -299,9 +302,6 @@
                 "x": 160,
                 "y": 310
               }
-            ],
-            "labels": [
-              "Web Request"
             ]
           },
           {
@@ -424,6 +424,9 @@
               }
             },
             "id": "7db4092d-505c-49cf-899b-306771c0f35f",
+            "labels": [
+              "Web Response"
+            ],
             "source": {
               "cell": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e"
             },
@@ -435,9 +438,38 @@
                 "x": 460,
                 "y": 330
               }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Límite\nWeb Server / Db",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "a348e2a6-44a3-4316-bb56-511e154bf98a",
+            "source": {
+              "x": 600,
+              "y": 270
+            },
+            "target": {
+              "x": 650,
+              "y": 570
+            },
+            "vertices": [
+              {
+                "x": 530,
+                "y": 480
+              }
             ],
             "labels": [
-              "Web Response"
+              "Límite\nWeb Server / Db"
             ]
           },
           {
@@ -461,8 +493,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e",
             "zIndex": 11,
+            "id": "b78b952a-1676-4e45-b0e6-6c5a446c1d6e",
             "data": {
               "type": "tm.Process",
               "name": "Sitio web biblioteca",
@@ -501,8 +533,8 @@
           },
           {
             "position": {
-              "x": 540,
-              "y": 420
+              "x": 620,
+              "y": 430
             },
             "size": {
               "width": 120,
@@ -523,8 +555,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "4854feb9-f2fb-41bb-9ece-1424f227a0e2",
             "zIndex": 12,
+            "id": "4854feb9-f2fb-41bb-9ece-1424f227a0e2",
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
@@ -564,8 +596,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "d2fdd654-ae48-4638-ac89-f264e7969e3a",
             "zIndex": 13,
+            "id": "d2fdd654-ae48-4638-ac89-f264e7969e3a",
             "data": {
               "type": "tm.Store",
               "name": "Web Application Config",
@@ -605,8 +637,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "225567cd-dcce-4886-bd84-a6602cc47c7e",
             "zIndex": 14,
+            "id": "225567cd-dcce-4886-bd84-a6602cc47c7e",
             "data": {
               "type": "tm.Store",
               "name": "Páginas web en disco",
