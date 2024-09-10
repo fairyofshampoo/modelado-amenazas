@@ -77,9 +77,18 @@
             }
           }
         ]
+      },
+      {
+        "id": 2,
+        "title": "Instrucciones de SQL enviadas  hacia la base de datos",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.2.0",
+        "cells": []
       }
     ],
-    "diagramTop": 2,
+    "diagramTop": 3,
     "reviewer": "Lorena Rojas",
     "threatTop": 1
   }
